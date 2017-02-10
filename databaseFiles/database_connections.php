@@ -1,5 +1,4 @@
 <?php
-// Connecting to database as mysqli_connect("hostname", "username", "password", "database name");
-$connect = mysqli_connect("localhost", "root", "iamj", "employee");
+$connect = mysqli_connect("localhost", "root", "iamj", "crudangularjs");
 $connect->set_charset("utf8");
 ?>

@@ -10,7 +10,7 @@ $email = mysqli_real_escape_string($connect, $data->email);
 $gender = mysqli_real_escape_string($connect, $data->gender);
 $address = mysqli_real_escape_string($connect, $data->address);
 // mysqli query to insert the updated data
-$query = "UPDATE emp_details SET emp_name='$name',emp_email='$email',emp_gender='$gender',emp_address='$address' WHERE emp_id=$id";
+$query = "UPDATE users SET name='$name',email='$email',gender='$gender',address='$address' WHERE id=$id";
 mysqli_query($connect, $query);
 echo true;
 ?>

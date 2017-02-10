@@ -21,7 +21,7 @@
             <div class="navbar-header">
                 <!-- button to add employee to the database -->
                 <div class="alert alert-default navbar-brand search-box">
-                    <button class="btn btn-primary" ng-click="formToggle('#empForm')">Add Employee <span class="glyphicon glyphicon-plus" aria-hidden="true"></span></button>
+                    <button class="btn btn-primary" ng-click="formToggle('#insForm')">Add Employee <span class="glyphicon glyphicon-plus" aria-hidden="true"></span></button>
                 </div>
                 <div class="alert alert-default input-group search-box">
                     <span class="input-group-btn">
@@ -43,25 +43,25 @@
             <div class="table-responsive">
                 <table class="table table-hover">
                     <tr>
-                        <th>Emp ID</th>
-                        <th>Employee Name</th>
-                        <th>Email Address</th>
-                        <th>Gender</th>
+                        <th>ID</th>
+                        <th>Name</th>
                         <th>Address</th>
+                        <th>Gender</th>
+                        <th>Email</th>
                         <th></th>
                         <th></th>
                     </tr>
-                    <tr ng-repeat="detail in details | filter:search">
-                        <td><span>{{ detail.emp_id }}</span></td>
-                        <td>{{ detail.emp_name }}</td>
-                        <td>{{ detail.emp_email }}</td>
-                        <td>{{ detail.emp_gender }}</td>
-                        <td>{{ detail.emp_address }}</td>
+                    <tr ng-repeat="user in users | filter:search">
+                        <td><span>{{ user.id }}</span></td>
+                        <td>{{ user.name }}</td>
+                        <td>{{ user.email }}</td>
+                        <td>{{ user.gender }}</td>
+                        <td>{{ user.address }}</td>
                         <td>
-                            <button class="btn btn-warning" ng-click="editInfo(detail); formToggle('#editForm')" title="Edit"><span class="glyphicon glyphicon-edit"></span></button>
+                            <button class="btn btn-warning" ng-click="editInfo(user); formToggle('#editForm')" title="Edit"><span class="glyphicon glyphicon-edit"></span></button>
                         </td>
                         <td>
-                            <button class="btn btn-danger" ng-click="deleteInfo(detail)" title="Delete"><span class="glyphicon glyphicon-trash"></span></button>
+                            <button class="btn btn-danger" ng-click="deleteInfo(user)" title="Delete"><span class="glyphicon glyphicon-trash"></span></button>
                         </td>
                     </tr>
                 </table>

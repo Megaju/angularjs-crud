@@ -1,35 +1,35 @@
 <!-- Form used to add new entries of employee in database -->
-<form id="empForm" class="form-horizontal alert alert-warning hidden" name="empList"  ng-submit="insertInfo(empInfo);">
-    <h3 class="text-center">Insert Employee Details Into Database</h3>
+<form id="insForm" class="form-horizontal alert alert-warning hidden" name="empList"  ng-submit="insertInfo(info);">
+    <h3 class="text-center">Insert new user into database</h3>
     <div class="form-group">
-        <label for="Name">Employee Name:</label>
-        <input type="text" name="emp_name" class="form-control" placeholder="Enter     Employee Name" ng-model="empInfo.name" autofocus required />
+        <label for="Name">Name:</label>
+        <input type="text" name="name" class="form-control" placeholder="Enter name" ng-model="info.name" autofocus required />
     </div>
     <div class="form-group">
-        <p class="text-danger" ng-show="empList.emp_name.$invalid && empList.emp_name.$dirty">Name field is Empty!</p>
+        <p class="text-danger" ng-show="empList.name.$invalid && empList.name.$dirty">Name field is empty!</p>
     </div>
     <div class="form-group">
         <label for="Email">Email Address:</label>
-        <input type="email" name="emp_email" class="form-control" placeholder="Enter Employee Email Address" ng-model="empInfo.email" autofocus required />
+        <input type="email" name="email" class="form-control" placeholder="Enter Employee Email Address" ng-model="info.email" autofocus required />
     </div>
     <div class="form-group">
-        <p class="text-danger" ng-show="empList.emp_email.$invalid && empList.emp_email.$dirty">Invalid Email!</p>
+        <p class="text-danger" ng-show="empList.email.$invalid && empList.email.$dirty">Invalid Email!</p>
     </div>
     <div class="form-group">
         <label for="Gender">Gender:</label>
         <label for="" class="radio-inline gender">
-            <input type="radio" name="emp_gender" value="male" ng-model="empInfo.gender">Male
+            <input type="radio" name="gender" value="male" ng-model="info.gender">Male
         </label>
         <label for="" class="radio-inline gender">
-            <input type="radio" name="emp_gender" value="female" ng-model="empInfo.gender">Female
+            <input type="radio" name="gender" value="female" ng-model="info.gender">Female
         </label>
     </div>
     <div class="form-group">
         <label for="Address">Address:</label>
-        <input type="text" name="emp_address" class="form-control" placeholder="Enter Employee Address" ng-model="empInfo.address" autofocus required />
+        <input type="text" name="address" class="form-control" placeholder="Enter Employee Address" ng-model="info.address" autofocus required />
     </div>
     <div class="form-group">
-        <p class="text-danger" ng-show="empList.emp_address.$invalid && empList.emp_address.$dirty">Address field is Empty!</p>
+        <p class="text-danger" ng-show="empList.address.$invalid && empList.address.$dirty">Address field is Empty!</p>
     </div>
     <div class="form-group">
         <button class="btn btn-warning" ng-disabled="empList.$invalid">Add Into Database</button>

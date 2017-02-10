@@ -2,7 +2,7 @@
 // Including database connections
 require_once 'database_connections.php';
 // mysqli query to fetch all data from database
-$query = "SELECT * from emp_details ORDER BY emp_id ASC";
+$query = "SELECT * from users ORDER BY id ASC";
 $result = mysqli_query($connect, $query);
 $arr = array();
 if(mysqli_num_rows($result) != 0) {

@@ -32,7 +32,7 @@ crudApp.controller("mainCtrl", ['$scope', function($scope){
 crudApp.controller("crudCtrl", ['$scope','$http', function($scope,$http){
     // CREATE
     $scope.insertInfo = function(info){
-    $http.post('databaseFiles/insertDetails.php',
+    $http.post('databaseFiles/insertUsers.php',
         {
             "name":info.name,
             "email":info.email,
@@ -40,17 +40,17 @@ crudApp.controller("crudCtrl", ['$scope','$http', function($scope,$http){
             "gender":info.gender
         }).then(function(data){
             getInfo();
-            $('#empForm').toggleClass('hidden');
+            $('#insForm').toggleClass('hidden');
         });
     }
 
     // READ
     getInfo();
     function getInfo(){
-        // Sending request to EmpDetails.php files
-        $http.get('databaseFiles/empDetails.php').then(function(response){
+        // Sending request to EmpUsers.php files
+        $http.get('databaseFiles/empUsers.php').then(function(response){
             // Stored the returned data into scope
-            $scope.details = response.data;
+            $scope.users = response.data;
         });
     }
 
@@ -62,7 +62,7 @@ crudApp.controller("crudCtrl", ['$scope','$http', function($scope,$http){
     }
     // update function
     $scope.UpdateInfo = function(info){
-        $http.post('databaseFiles/updateDetails.php',{"id":info.emp_id,"name":info.emp_name,"email":info.emp_email,"address":info.emp_address,"gender":info.emp_gender}).then(function(data){
+        $http.post('databaseFiles/updateUsers.php',{"id":info.id,"name":info.name,"email":info.email,"address":info.address,"gender":info.gender}).then(function(data){
             getInfo();
             $('#editForm').addClass('hidden');
         });
@@ -70,7 +70,7 @@ crudApp.controller("crudCtrl", ['$scope','$http', function($scope,$http){
 
     // DELETE
     $scope.deleteInfo = function(info){
-        $http.post('databaseFiles/deleteDetails.php',{"del_id":info.emp_id}).then(function(data){
+        $http.post('databaseFiles/deleteUsers.php',{"del_id":info.id}).then(function(data){
             getInfo();
         });
     }

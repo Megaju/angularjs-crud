@@ -10,7 +10,7 @@ $gender = mysqli_real_escape_string($connect, $data->gender);
 $address = mysqli_real_escape_string($connect, $data->address);
 
 // mysqli insert query
-$query = "INSERT into emp_details (emp_name,emp_email,emp_gender,emp_address) VALUES ('$name','$email','$gender','$address')";
+$query = "INSERT into users (name,email,gender,address) VALUES ('$name','$email','$gender','$address')";
 // Inserting data into database
 mysqli_query($connect, $query);
 echo true;
