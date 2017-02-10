@@ -18,8 +18,9 @@
             <h1 class="text-center">{{ sitetitle }}</h1>
             <nav class="navbar navbar-default">
             <div class="navbar-header">
+                <!-- button to add employee to the database -->
                 <div class="alert alert-default navbar-brand search-box">
-                    <button class="btn btn-primary" ng-show="show_form" ng-click="formToggle()">Add Employee <span class="glyphicon glyphicon-plus" aria-hidden="true"></span></button>
+                    <button class="btn btn-primary" ng-click="formToggle()">Add Employee <span class="glyphicon glyphicon-plus" aria-hidden="true"></span></button>
                 </div>
                 <div class="alert alert-default input-group search-box">
                     <span class="input-group-btn">
@@ -29,8 +30,11 @@
             </div>
             </nav>
             <div class="col-md-6 col-md-offset-3">
-                <!-- Include form template which is used to insert data into database -->
-                <div ng-include src="'templates/form.html'"></div>
+                <!-- Include form template which is used to insert data into
+                database -->
+                <!-- Form used to add new entries of employee in database -->
+                <div ng-include src="'templates/insertForm.html'"></div>
+
                 <!-- Include form template which is used to edit and update data into database -->
                 <div ng-include src="'templates/editForm.html'"></div>
             </div>
@@ -48,8 +52,7 @@
                         <th></th>
                     </tr>
                     <tr ng-repeat="detail in details | filter:search">
-                        <td>
-                        <span>{{detail.emp_id}}</span></td>
+                        <td><span>{{detail.emp_id}}</span></td>
                         <td>{{detail.emp_name}}</td>
                         <td>{{detail.emp_email}}</td>
                         <td>{{detail.emp_gender}}</td>
