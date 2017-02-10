@@ -3,12 +3,20 @@
         <title>{{ sitetitle }}</title>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
+        <!-- Include materialize style -->
+        <link rel="stylesheet" href="css/materialize.min.css">
+        <!-- Include font-awesome -->
+        <link rel="stylesheet" href="css/font-awesome.min.css">
         <!-- Include main CSS -->
         <link rel="stylesheet" type="text/css" href="css/style.css">
         <!-- Include jQuery library -->
-        <script src="js/jQuery/jquery-3.1.1.min.js"></script>
+        <script src="lib/jquery-3.1.1.min.js"></script>
+        <!-- Include materialize libray -->
+        <script type="text/javascript" src="lib/materialize.min.js">
+
+        </script>
         <!-- Include AngularJS library -->
-        <script src="lib/angular/angular.min.js"></script>
+        <script src="lib/angular.min.js"></script>
     </head>
     <body>
         <div class="container wrapper" ng-controller="crudCtrl">
@@ -17,7 +25,7 @@
             <div class="navbar-header">
                 <!-- button to add employee to the database -->
                 <div class="alert alert-default navbar-brand search-box">
-                    <button class="btn btn-primary" ng-click="formToggle('#insForm')">Add Employee <span class="glyphicon glyphicon-plus" aria-hidden="true"></span></button>
+                    <button class="btn btn-primary" ng-click="formToggle('#insForm')">Add Employee <span class="fa fa-plus" aria-hidden="true"></span></button>
                 </div>
                 <div class="alert alert-default input-group search-box">
                     <span class="input-group-btn">
@@ -54,16 +62,16 @@
                         <td>{{ user.gender }}</td>
                         <td>{{ user.address }}</td>
                         <td>
-                            <button class="btn btn-warning" ng-click="editInfo(user); formToggle('#editForm')" title="Edit"><span class="glyphicon glyphicon-edit"></span></button>
+                            <button class="btn btn-warning" ng-click="editInfo(user); formToggle('#editForm')" title="Edit"><span class="fa fa-edit"></span></button>
                         </td>
                         <td>
-                            <button class="btn btn-danger" ng-click="deleteInfo(user)" title="Delete"><span class="glyphicon glyphicon-trash"></span></button>
+                            <button class="btn btn-danger" ng-click="deleteInfo(user)" title="Delete"><span class="fa fa-trash"></span></button>
                         </td>
                     </tr>
                 </table>
             </div>
             </div>
         <!-- Include controller -->
-        <script src="js/angular-script.js"></script>
+        <script src="js/app.js"></script>
     </body>
 </html>
