@@ -19,6 +19,11 @@ crudApp.controller("mainCtrl", ['$scope', function($scope){
     $scope.abortUpdate = function(form){
         $(form).addClass('hidden');
     }
+
+    // Update message
+    $scope.updateMsg = function(name){
+        alert('The ' + name + '\'s account has updated with succes !');
+    }
 }]);
 
 // ==================================================================
@@ -51,7 +56,7 @@ crudApp.controller("crudCtrl", ['$scope','$http', function($scope,$http){
 
     // UPDATE
     // data recovery
-    $scope.currentUser = {}; // We need some info and display the form
+    $scope.currentUser = {};
     $scope.editInfo = function(info){
         $scope.currentUser = info;
     }
@@ -60,7 +65,6 @@ crudApp.controller("crudCtrl", ['$scope','$http', function($scope,$http){
         $http.post('databaseFiles/updateDetails.php',{"id":info.emp_id,"name":info.emp_name,"email":info.emp_email,"address":info.emp_address,"gender":info.emp_gender}).then(function(data){
             getInfo();
             $('#editForm').addClass('hidden');
-            alert('Le compte a bien été mis à jour');
         });
     }
 

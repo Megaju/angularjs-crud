@@ -1,4 +1,3 @@
-<!-- Form used for updation of data into database -->
 <form id="editForm" class="form-horizontal alert alert-warning hidden" ng-submit="UpdateInfo(currentUser)">
     <h3 class="text-center">Update Employee Details</h3>
     <div class="form-group">
@@ -23,7 +22,7 @@
         <input type="text" class="form-control" ng-model="currentUser.emp_address" value="{{currentUser.emp_address}}">
     </div>
     <div class="form-group">
-        <button class="btn btn-warning" ng-disabled="empList.$invalid" ng-click="updateMsg(currentUser.emp_id)">Update</button>
+        <button class="btn btn-warning" ng-disabled="empList.$invalid" ng-click="updateMsg(currentUser.emp_name)">Update</button>
         <button class="btn btn-danger" ng-click="abortUpdate('#editForm')">Abort</button>
     </div>
 </form>
