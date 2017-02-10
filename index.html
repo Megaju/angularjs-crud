@@ -4,6 +4,7 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <!-- Include materialize style -->
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
         <link rel="stylesheet" href="css/materialize.min.css">
         <!-- Include font-awesome -->
         <link rel="stylesheet" href="css/font-awesome.min.css">
@@ -12,29 +13,28 @@
         <!-- Include jQuery library -->
         <script src="js/jquery-3.1.1.min.js"></script>
         <!-- Include materialize libray -->
-        <script type="text/javascript" src="js/materialize.min.js">
-
-        </script>
+        <script type="text/javascript" src="js/materialize.min.js"></script>
         <!-- Include AngularJS library -->
         <script src="js/angular.min.js"></script>
     </head>
-    <body>
-        <div class="container wrapper" ng-controller="crudCtrl">
-            <h1 class="text-center">{{ sitetitle }}</h1>
-            <nav class="navbar navbar-default">
-            <div class="navbar-header">
-                <!-- button to add employee to the database -->
-                <div class="alert alert-default navbar-brand search-box">
-                    <button class="btn btn-primary" ng-click="formToggle('#insForm')">Add Employee <span class="fa fa-plus" aria-hidden="true"></span></button>
+    <body class="teal lighten-2">
+
+        <nav>
+            <div class="nav-wrapper">
+              <form class="col m-6 offset-m3">
+                <div class="input-field">
+                  <input id="search" type="search" ng-model="search" required>
+                  <label class="label-icon" for="search"><i class="material-icons">search</i></label>
+                  <i class="material-icons">close</i>
                 </div>
-                <div class="alert alert-default input-group search-box">
-                    <span class="input-group-btn">
-                    <input type="text" class="form-control" placeholder="Search Employee Details Into Database..." ng-model="search">
-                    </span>
-                </div>
+              </form>
             </div>
-            </nav>
-            <div class="col-md-6 col-md-offset-3">
+        </nav>
+
+        <div class="container blue-grey lighten-5" ng-controller="crudCtrl">
+            <h1 class="center-align">{{ sitetitle }}</h1>
+            <div class="col m6 offset-m3">
+                <button class="btn" ng-click="formToggle('#insForm')">Add New User <span class="fa fa-plus" aria-hidden="true"></span></button>
                 <!-- Include form template which is used to insert data into
                 database -->
                 <!-- Form used to add new entries of employee in database -->

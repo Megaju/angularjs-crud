@@ -1,8 +1,11 @@
 ANGULARJS CRUD
 ==============
 
+## INSPIRED BY A FORMGET'S TUTORIAL
 
-# Create the database
+You can see more informations [on this page](https://www.formget.com/angularjs-crud/).
+
+## THE DATABASE
 
 Create a database "crudangularjs" and run this script
 
@@ -14,3 +17,7 @@ gender varchar(255) NOT NULL,
 address varchar(255) NOT NULL,
 PRIMARY KEY (id)
 );
+
+## DEMO
+
+The live demo is [here !](http://kijewoku.com/idea/angularjs-crud/)

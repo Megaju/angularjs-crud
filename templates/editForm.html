@@ -1,27 +1,35 @@
-<form id="editForm" class="form-horizontal alert alert-warning hidden" ng-submit="UpdateInfo(currentUser)">
-    <h3 class="text-center">Update Employee Details</h3>
-    <div class="form-group">
-        <label for="Name">Name:</label>
-        <input type="text" class="form-control" ng-model="currentUser.name" value="{{currentUser.name}}">
+<form id="editForm" class="row hidden" ng-submit="UpdateInfo(currentUser)">
+    <h3 class="center-align">Update Employee Details</h3>
+
+    <!-- name -->
+    <div class="input-field col m8 offset-m2">
+        <input id="user_name" type="text" class="form-control" ng-model="currentUser.name" value="{{currentUser.name}}">
+        <label for="user_name" class="active">Name</label>
     </div>
-    <div class="form-group">
-        <label for="Email">Email Address:</label>
+
+    <!-- email -->
+    <div class="input-field col m8 offset-m2">
         <input type="email" class="form-control" ng-model="currentUser.email" value="{{currentUser.email}}">
+        <label for="Email" class="active">Email Address</label>
     </div>
-    <div class="form-group">
-        <label for="Gender">Gender:</label>
-        <label for="" class="radio-inline gender">
-            <input type="radio" ng-model="currentUser.gender" value="male" >Male
-        </label>
-        <label for="" class="radio-inline gender">
-            <input type="radio" name="gender" ng-model="currentUser.gender" value="female">Female
-        </label>
-    </div>
-    <div class="form-group">
-        <label for="Address">Address:</label>
+
+    <!-- adress -->
+    <div class="input-field col m8 offset-m2">
         <input type="text" class="form-control" ng-model="currentUser.address" value="{{currentUser.address}}">
+        <label for="Address" class="active">Address</label>
     </div>
-    <div class="form-group">
+
+    <!-- gender -->
+    <div class="col m8 offset-m2">
+        <label>Gender</label>
+        <input name="new_gender" type="radio" id="test3" class="with-gap" value="male" ng-model="currentUser.gender"/>
+        <label for="test3">Male</label>
+        <input name="new_gender" type="radio" id="test4" class="with-gap" value="female" ng-model="currentUser.gender"/>
+        <label for="test4">Female</label>
+    </div>
+
+    <!-- submit -->
+    <div class="input-field col m8 offset-m2">
         <button class="btn btn-warning" ng-disabled="empList.$invalid" ng-click="updateMsg(currentUser.name)">Update</button>
         <button class="btn btn-danger" ng-click="abortUpdate('#editForm')">Abort</button>
     </div>
