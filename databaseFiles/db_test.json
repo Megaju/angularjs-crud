@@ -1,0 +1,29 @@
+[
+    {
+        "emp_id":"1",
+        "emp_name":"Megaju",
+        "emp_email":"megaju@mail.com",
+        "emp_gender":"male",
+        "emp_address":"9 rue de Toto"},
+    {
+        "emp_id":"2",
+        "emp_name":"Momau",
+        "emp_email":"momau@mail.com",
+        "emp_gender":"female",
+        "emp_address":"9 rue de Toto"
+    },
+    {
+        "emp_id":"3",
+        "emp_name":"Prunelle",
+        "emp_email":"prenuelle@mail.com",
+        "emp_gender":"female",
+        "emp_address":"9 rue de Tata"
+    },
+    {
+        "emp_id":"4",
+        "emp_name":"Isa",
+        "emp_email":"isa@mail.com",
+        "emp_gender":"female",
+        "emp_address":"14 rue des Balls"
+    }
+]

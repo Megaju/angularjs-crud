@@ -7,7 +7,7 @@
         <!-- Include main CSS -->
         <link rel="stylesheet" type="text/css" href="css/style.css">
         <!-- Include jQuery library -->
-        <script src="js/jQuery/jquery.min.js"></script>
+        <script src="js/jQuery/jquery-3.1.1.min.js"></script>
         <!-- Include AngularJS library -->
         <script src="lib/angular/angular.min.js"></script>
         <!-- Include Bootstrap Javascript -->
@@ -15,7 +15,7 @@
     </head>
     <body>
         <div class="container wrapper" ng-controller="DbController">
-            <h1 class="text-center">AngularJS CRUD Operations Demo</h1>
+            <h1 class="text-center">{{ sitetitle }}</h1>
             <nav class="navbar navbar-default">
             <div class="navbar-header">
                 <div class="alert alert-default navbar-brand search-box">
@@ -23,7 +23,7 @@
                 </div>
                 <div class="alert alert-default input-group search-box">
                     <span class="input-group-btn">
-                    <input type="text" class="form-control" placeholder="Search Employee Details Into Database..." ng-model="search_query">
+                    <input type="text" class="form-control" placeholder="Search Employee Details Into Database..." ng-model="search">
                     </span>
                 </div>
             </div>
@@ -47,7 +47,7 @@
                         <th></th>
                         <th></th>
                     </tr>
-                    <tr ng-repeat="detail in details| filter:search_query">
+                    <tr ng-repeat="detail in details | filter:search">
                         <td>
                         <span>{{detail.emp_id}}</span></td>
                         <td>{{detail.emp_name}}</td>
