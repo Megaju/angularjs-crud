@@ -63,6 +63,11 @@ crudApp.controller("DbController",['$scope','$http', function($scope,$http){
     }
 
     // DELETE
+    $scope.deleteInfo = function(info){
+        $http.post('databaseFiles/deleteDetails.php',{"del_id":info.emp_id}).then(function(data){
+            getInfo();
+        });
+    }
 
     // the end :3
 }]);
