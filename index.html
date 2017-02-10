@@ -20,7 +20,7 @@
             <div class="navbar-header">
                 <!-- button to add employee to the database -->
                 <div class="alert alert-default navbar-brand search-box">
-                    <button class="btn btn-primary" ng-click="formToggle()">Add Employee <span class="glyphicon glyphicon-plus" aria-hidden="true"></span></button>
+                    <button class="btn btn-primary" ng-click="formToggle('#empForm')">Add Employee <span class="glyphicon glyphicon-plus" aria-hidden="true"></span></button>
                 </div>
                 <div class="alert alert-default input-group search-box">
                     <span class="input-group-btn">
@@ -34,7 +34,6 @@
                 database -->
                 <!-- Form used to add new entries of employee in database -->
                 <div ng-include src="'templates/insertForm.html'"></div>
-
                 <!-- Include form template which is used to edit and update data into database -->
                 <div ng-include src="'templates/editForm.html'"></div>
             </div>
@@ -52,13 +51,13 @@
                         <th></th>
                     </tr>
                     <tr ng-repeat="detail in details | filter:search">
-                        <td><span>{{detail.emp_id}}</span></td>
-                        <td>{{detail.emp_name}}</td>
-                        <td>{{detail.emp_email}}</td>
-                        <td>{{detail.emp_gender}}</td>
-                        <td>{{detail.emp_address}}</td>
+                        <td><span>{{ detail.emp_id }}</span></td>
+                        <td>{{ detail.emp_name }}</td>
+                        <td>{{ detail.emp_email }}</td>
+                        <td>{{ detail.emp_gender }}</td>
+                        <td>{{ detail.emp_address }}</td>
                         <td>
-                            <button class="btn btn-warning" ng-click="editInfo(detail)" title="Edit"><span class="glyphicon glyphicon-edit"></span></button>
+                            <button class="btn btn-warning" ng-click="editInfo(detail); formToggle('#editForm')" title="Edit"><span class="glyphicon glyphicon-edit"></span></button>
                         </td>
                         <td>
                             <button class="btn btn-danger" ng-click="deleteInfo(detail)" title="Delete"><span class="glyphicon glyphicon-trash"></span></button>

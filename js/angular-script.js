@@ -6,9 +6,20 @@ crudApp.controller("DbController",['$scope','$http', function($scope,$http){
     // Site title
     $scope.sitetitle = "AngularJS CRUD Operations Demo";
 
-    // Display/Hidden form
-    $scope.formToggle = function(){
-        $('#empForm').toggleClass('hidden');
+    // Display/Hidden forms
+    $scope.formToggle = function(form){
+        if(form == '#editForm'){
+            if($(form).hasClass('hidden')){
+                $(form).removeClass('hidden');
+            } else {
+                // nothing
+            }
+        } else {
+            $(form).toggleClass('hidden');
+        }
+    }
+    $scope.abortUpdate = function(form){
+        $(form).addClass('hidden');
     }
 
     // ==================================================================
@@ -39,7 +50,10 @@ crudApp.controller("DbController",['$scope','$http', function($scope,$http){
     }
 
     // UPDATE
-    
+    $scope.currentUser = {}; // We need some info and display the form
+    $scope.editInfo = function(info){
+        $scope.currentUser = info;
+    }
 
     // DELETE
 
