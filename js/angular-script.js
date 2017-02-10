@@ -11,8 +11,6 @@ crudApp.controller("DbController",['$scope','$http', function($scope,$http){
         if(form == '#editForm'){
             if($(form).hasClass('hidden')){
                 $(form).removeClass('hidden');
-            } else {
-                // nothing
             }
         } else {
             $(form).toggleClass('hidden');
@@ -50,9 +48,18 @@ crudApp.controller("DbController",['$scope','$http', function($scope,$http){
     }
 
     // UPDATE
+    // data recovery
     $scope.currentUser = {}; // We need some info and display the form
     $scope.editInfo = function(info){
         $scope.currentUser = info;
+    }
+    // update function
+    $scope.UpdateInfo = function(info){
+        $http.post('databaseFiles/updateDetails.php',{"id":info.emp_id,"name":info.emp_name,"email":info.emp_email,"address":info.emp_address,"gender":info.emp_gender}).then(function(data){
+            getInfo();
+            $('#editForm').addClass('hidden');
+            alert('Le compte a bien été mis à jour');
+        });
     }
 
     // DELETE
