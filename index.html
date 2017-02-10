@@ -1,6 +1,6 @@
-<html ng-app="crudApp">
+<html ng-app="crudApp" ng-controller="mainCtrl">
     <head>
-        <title>AngularJS Directive Demo</title>
+        <title>{{ sitetitle }}</title>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <!-- Include Bootstrap CSS -->
@@ -15,7 +15,7 @@
         <script src="js/bootstrap.min.js"></script>
     </head>
     <body>
-        <div class="container wrapper" ng-controller="DbController">
+        <div class="container wrapper" ng-controller="crudCtrl">
             <h1 class="text-center">{{ sitetitle }}</h1>
             <nav class="navbar navbar-default">
             <div class="navbar-header">

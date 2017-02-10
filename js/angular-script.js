@@ -1,10 +1,10 @@
 // Application module
 var crudApp = angular.module('crudApp',[]);
 
-// Controller
-crudApp.controller("DbController",['$scope','$http', function($scope,$http){
+// Controllers
+crudApp.controller("mainCtrl", ['$scope', function($scope){
     // Site title
-    $scope.sitetitle = "AngularJS CRUD Operations Demo";
+    $scope.sitetitle = "CRUD AngularJS";
 
     // Display/Hidden forms
     $scope.formToggle = function(form){
@@ -19,10 +19,12 @@ crudApp.controller("DbController",['$scope','$http', function($scope,$http){
     $scope.abortUpdate = function(form){
         $(form).addClass('hidden');
     }
+}]);
 
-    // ==================================================================
-    // ============================== CRUD ==============================
-    // ==================================================================
+// ==================================================================
+// ============================== CRUD ==============================
+// ==================================================================
+crudApp.controller("crudCtrl", ['$scope','$http', function($scope,$http){
     // CREATE
     $scope.insertInfo = function(info){
     $http.post('databaseFiles/insertDetails.php',
