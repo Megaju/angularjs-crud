@@ -1,5 +1,5 @@
-<!-- Form used to add new entries of employee in database -->
-<form id="insForm" class="row hidden" name="empList"  ng-submit="insertInfo(info);">
+<div id="insForm" class="form row hidden">
+<form name="empList"  ng-submit="insertInfo(info);">
     <h3 class="center-align">Insert new user into database</h3>
 
     <!-- name -->
@@ -43,3 +43,5 @@
         <button class="btn btn-warning" ng-disabled="empList.$invalid">Add Into Database</button>
     </div>
 </form>
+<button class="btn red darken-4 abort-btn" ng-click="abortUpdate('#insForm')"><i class="fa fa-times" aria-hidden="true"></i></button>
+</div>

@@ -3,6 +3,16 @@
     padding: 10px 50px 50px 50px;
 }
 
+.form {
+    position: relative;
+}
+
+.abort-btn {
+    position: absolute;
+    top: 0;
+    right: 100px;
+}
+
 .hidden {
     display: none;
 }

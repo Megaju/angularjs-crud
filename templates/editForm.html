@@ -1,4 +1,5 @@
-<form id="editForm" class="row hidden" ng-submit="UpdateInfo(currentUser)">
+<div id="editForm" class="form row hidden">
+<form ng-submit="UpdateInfo(currentUser)">
     <h3 class="center-align">Update Employee Details</h3>
 
     <!-- name -->
@@ -30,7 +31,8 @@
 
     <!-- submit -->
     <div class="input-field col m8 offset-m2">
-        <button class="btn btn-warning" ng-disabled="empList.$invalid" ng-click="updateMsg(currentUser.name)">Update</button>
-        <button class="btn btn-danger" ng-click="abortUpdate('#editForm')">Abort</button>
+        <button class="btn" ng-disabled="empList.$invalid" ng-click="updateMsg(currentUser.name)">Update</button>
     </div>
 </form>
+<button class="btn red darken-4 abort-btn" ng-click="abortUpdate('#editForm')"><i class="fa fa-times" aria-hidden="true"></i></button>
+</div>
