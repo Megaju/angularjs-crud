@@ -3,6 +3,7 @@
         <title>{{ sitetitle }}</title>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="icon" type="image/png" href="images/favicon.png" />
         <!-- Include materialize style -->
         <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
         <link rel="stylesheet" href="css/materialize.min.css">
@@ -16,9 +17,11 @@
         <script type="text/javascript" src="js/materialize.min.js"></script>
         <!-- Include AngularJS library -->
         <script src="js/angular.min.js"></script>
+
+        <script async defer src="https://buttons.github.io/buttons.js"></script>
     </head>
     <body class="blue-grey lighten-3">
-
+        <div class="backimg"></div>
         <nav class="blue-grey darken-4">
             <div class="nav-wrapper">
               <form class="col m-6 offset-m3">
@@ -30,6 +33,10 @@
               </form>
             </div>
         </nav>
+
+        <div class="github">
+            <a class="github-button" href="https://github.com/Megaju/angularjs-crud" data-style="mega" aria-label="Follow">Follow</a>
+        </div>
 
         <div class="container blue-grey lighten-5" ng-controller="crudCtrl">
             <h1 class="center-align">{{ sitetitle }}</h1>

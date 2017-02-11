@@ -16,3 +16,18 @@
 .hidden {
     display: none;
 }
+
+.backimg {
+    width: 60vw;
+    height: 100vh;
+    background-image: url(../images/accounting-book.svg);
+    background-size: cover;
+    position: absolute;
+    opacity: .2;
+    z-index: -1;
+}
+
+.github {
+    float: right;
+    margin: 15px;
+}
